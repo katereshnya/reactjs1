@@ -1,7 +1,13 @@
-export function App() {
+import "./App.css";
+
+const Message = (props) => {
   return (
     <div className="App">
-      <header className="App-header">Hello</header>
+      <header>{props.text}</header>
     </div>
   );
+};
+
+export function App() {
+  return <Message text="Урок 1. Знакомство с ReactJS. Первые компоненты" />;
 }
