@@ -1,0 +1,15 @@
+.chatlist {
+  display: flex;
+}
+
+.chatlist button {
+  color: #fff;
+  background-color: #1a293d;
+  margin: 2px 10px;
+  border: 1px solid #0e1621;
+}
+
+.link {
+  width: 100%;
+  margin: 2px 10px 0 5px;
+}
