@@ -9,8 +9,9 @@ export const Message = ({ message, children }) => {
         [styles.currentMessage]: message.author === "User",
       })}
     >
-      <h3>{message.author}</h3>
-      <p>{message.message}</p>
+      <h3 className={styles.author}>{message.author}</h3>
+      <hr className={styles.line} />
+      <p className={styles.message}>{message.message}</p>
       {children}
       <p>{format(message.date, "yyyy-MM-dd HH:mm:ss")}</p>
     </div>

@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { toggleVisibleProfile } from "../store/profile";
 import { ProfileForm } from "../components/profile-form";
-import styles from "./profile.module.css";
+import styles from "../components/profile-form/profile-form.module.css";
 
 export const ProfilePage = () => {
   const dispatch = useDispatch();
@@ -12,7 +12,7 @@ export const ProfilePage = () => {
   return (
     <div className={styles.profile}>
       <button onClick={() => dispatch(toggleVisibleProfile())}>
-        profile visible
+        PROFILE VISIBLE
       </button>
       <div>
         {isVisibleProfile && (

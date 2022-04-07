@@ -7,6 +7,7 @@ import {
   deleteConversation,
   conversationsSelector,
 } from "../../store/conversations";
+import styles from "./chat-list.module.css";
 
 export function ChatList() {
   const { roomId } = useParams();
@@ -39,11 +40,11 @@ export function ChatList() {
 
       {/* @TODO  переверстать */}
       {conversations.map((chat, index) => (
-        <div style={{ display: "flex" }} key={index}>
+        <div className={styles.chatlist} key={index}>
           <Button color="info" onClick={() => deleteCb(chat)}>
             X
           </Button>
-          <Link to={`/chat/${chat}`}>
+          <Link className={styles.link} to={`/chat/${chat}`}>
             <Chat title={chat} selected={roomId === chat} />
           </Link>
         </div>

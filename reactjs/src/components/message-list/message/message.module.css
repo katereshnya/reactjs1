@@ -24,3 +24,20 @@
   color: #45719f;
   text-align: right;
 }
+
+.author {
+  color: #627c90;
+  margin: -10px;
+}
+
+hr {
+  border: none;
+  color: #435564;
+  background-color: #435564;
+  height: 1px;
+}
+
+.message {
+  color: #d7dadb;
+  margin: -7px;
+}
