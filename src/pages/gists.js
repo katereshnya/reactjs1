@@ -14,7 +14,7 @@ export function GistsPage() {
 
   if (error) {
     return <h1>error</h1>;
-  }
+  }  
 
   return (
     <>

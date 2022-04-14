@@ -3,6 +3,5 @@ export const crashReporter = (store) => (next) => (action) => {
     return next(action);
   } catch (e) {
     console.error("error cached >>", e);
-    // api.call(e)
   }
 };
