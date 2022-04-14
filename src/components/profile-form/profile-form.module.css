@@ -1,0 +1,49 @@
+.edit {
+  margin: 10px;
+}
+
+h1 {
+  color: #2d4968;
+  font-size: 40px;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.info {
+  display: flex;
+  padding: 10px;
+  background-color: #2d4968;
+}
+
+h3 {
+  color: #fff;
+  padding: 10px !important;
+}
+
+h3 span {
+  color: rgb(207, 202, 202);
+}
+
+.profile button {
+  padding: 10px;
+  background-color: #2b5278;
+  color: #fff;
+  font-size: large;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.edit button {
+  padding: 0;
+  margin-top: 10px;
+  font-size: medium;
+}
+
+.edit button:hover,
+.profile button:hover {
+  background-color: #4c77a8;
+}
