@@ -1,0 +1,21 @@
+.link {
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.5s;
+}
+
+.link:hover {
+  color: rgb(243, 219, 219);
+  text-decoration: underline;
+}
+
+.appBar {
+  border-bottom: 1px solid #000;
+}
+
+.header {
+  color: #fff;
+  font-size: 25px;
+  background-color: #2d4968;
+  padding: 10px;
+}
