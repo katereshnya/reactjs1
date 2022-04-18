@@ -10,18 +10,25 @@ import {
   Box,
   AppBar,
 } from "@mui/material";
+import { signOut } from "firebase/auth";
+import { auth } from "../../api/firibase";
 import styles from "./header.module.css";
 import logo from "../../assets/react.png";
 import { ThemeContext } from "../../theme-context";
 
-const menu = [
+const menuWithSession = [
   { title: "Home", to: "/" },
   { title: "Chat", to: "/chat" },
   { title: "Profile", to: "/profile" },
   { title: "Gists", to: "/gists" },
 ];
 
-export function Header() {
+const menuWithoutSession = [
+  { title: "Login", to: "/login" },
+  { title: "Sign-up", to: "/sign-up" },
+];
+
+export function Header({ session }) {
   const { themeSetter, theme } = useContext(ThemeContext);
 
   return (
@@ -37,8 +44,9 @@ export function Header() {
             <img src={logo} alt="Logo" />
           </Typography>
 
+          {!!session && (
           <Box sx={{ flexGrow: 1, display: "flex" }}>
-            {menu.map((item) => (
+            {menuWithSession.map((item) => (
               <Button
                 key={item.to}
                 sx={{ my: 2, color: "white", display: "block" }}
@@ -49,6 +57,24 @@ export function Header() {
               </Button>
             ))}
           </Box>
+          )}
+
+          {!!session && <button onClick={() => signOut(auth)}>out</button>}
+
+          {!session && (
+            <Box sx={{ flexGrow: 1, display: "flex" }}>
+              {menuWithoutSession.map((item) => (
+                <Button
+                  key={item.to}
+                  sx={{ my: 2, color: "white", display: "block" }}
+                >
+                  <Link to={item.to} className={styles.link}>
+                    {item.title}
+                  </Link>
+                </Button>
+              ))}
+            </Box>
+          )}
 
           <Box sx={{ flexGrow: 0 }}>
             <button onClick={() => themeSetter("light")}>light</button>
