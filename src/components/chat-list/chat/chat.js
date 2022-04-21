@@ -18,18 +18,19 @@ const useStyles = makeStyles((ctx) => {
   };
 });
 
-export function Chat({ title, selected }) {
+export function Chat({ title, selected, onClick }) {
   const styles = useStyles();
   const message = useSelector(lastMessageSelector(title));
 
   return (
-    <ListItemButton className={styles.item} selected={selected}>
+    <ListItemButton className={styles.item} selected={selected} data-testid="wrapper">
+
       <div className={st.wrapper}>
         <ListItem>
           <AccountCircle fontSize="large" className={st.icon} />
         </ListItem>
 
-        <ListItemText primary={title} className={st.text} />
+        <ListItemText primary={title} className={st.text}  onClick={onClick}/>
 
         {message && (
           <ListItemText>

@@ -19,7 +19,7 @@ import { auth } from "./api/firibase";
 import "./global.css";
 
 const App = () => {
-  // @TODO перенести в redux
+  
   const [session, setSession] = useState(null);
 
   useEffect(() => {

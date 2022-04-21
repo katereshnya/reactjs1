@@ -23,6 +23,9 @@ export const ProfilePage = () => {
             <h3>
               LastName: <span>{lastName}</span>
             </h3>
+            <h3>
+            phone: <span>{phone}</span>
+            </h3>
           </div>
         )}
         <hr />

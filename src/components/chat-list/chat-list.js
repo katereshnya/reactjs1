@@ -3,7 +3,7 @@ import { Link, useParams, useNavigate } from "react-router-dom";
 import { List, Button } from "@mui/material";
 import { Chat } from "./chat";
 import {
-  createConversation,
+  createConversationFB,
   deleteConversation,
   conversationsSelector,
 } from "../../store/conversations";
@@ -21,7 +21,7 @@ export function ChatList() {
     const isValidName = !conversations.includes(name);
 
     if (!!name && isValidName) {
-      dispatch(createConversation(name));
+      dispatch(createConversationFB(name));
     } else {
       alert("Не правильное название");
     }
@@ -42,7 +42,6 @@ export function ChatList() {
         create room
       </Button>
 
-      {/* @TODO  переверстать */}
       {conversations.map((chat, index) => (
         <div className={styles.chatlist} key={index}>
           <Button color="info" onClick={() => deleteCb(chat)}>
